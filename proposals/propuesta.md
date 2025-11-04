@@ -1,10 +1,10 @@
 # 🧩 Propuesta técnica del proyecto PIA
 
 ## 🛡️ Título del proyecto
-> Protección y control de integridad
+> Protección y control de integridad de archivos 
 
 ## 📌 Descripción general del proyecto
-> Breve explicación del propósito, enfoque y tipo de tareas de ciberseguridad que se abordarán.
+> Mantener la integridad de archivos importantes en el sistema. Identificación y alertas ante cambios no autorizados.
 
 ---
 
