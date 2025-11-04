@@ -31,6 +31,7 @@ Archivo de referencia con los hashes originales
 Rutas de los archivos a monitorear:
     -Ejemplo: ["C:\Windows\Firmware"
     "C:\Windows\Documents\Base_Datos.csv"]
+    
     ["/etc/passwd"
     "/etc/shadow",
     "/home/tux/important_config.conf"]
@@ -43,7 +44,6 @@ Rutas de los archivos a monitorear:
 
     [C:\Windows\Firmware] [INTACTO]
     [C:\Windows\Documents\Base_Datos.csv] [ELIMINADO]
-
 - **Descripción del procedimiento**: 
 1. Leer el archivo con los hashes originales
 2. Recorrer las rutas indicadas y calcular el hash del archivo
@@ -51,10 +51,16 @@ Rutas de los archivos a monitorear:
 4. Registrar los resultados en el reporte
 5. Enviar alertas si se detectaron modificaciones, eliminaciones o nuevos archivos no registrados. 
 6. Programar la próxima ejecución del proceso.
-
-- **Complejidad técnica**: [Dimensiones que cubre: parsing, correlación, automatización, librerías]
-- **Controles éticos**: [Uso de datos sintéticos, ambientes controlados, anonimización]
-- **Dependencias**: [Librerías, comandos, entorno, variables de entorno]
+- **Complejidad técnica**: 
+Lectura y procesamiento de archivos de texto con hashes.
+Comparación entre valores.
+Ejecución automatizada periódica.
+Uso de librerías de python como pyautogui, hashlib, os, logging y subprocess para poder integrar comandos de shells.
+- **Controles éticos**: 
+Se deben usar archivos de prueba o datos sintéticos en ambientes controlados. 
+Evitar incluir archivos con datos personales o sensibles
+Los resultados deben almacenarse de forma segura y anonimizada si contienen rutas personales.
+- **Dependencias**: [Hashlib, os, datetime, logging, pyautogui, subprocess]
 
 ### 🧠 Tarea 3 (opcional)
 - **Título**: [Nombre de la tarea]
@@ -71,6 +77,7 @@ Rutas de los archivos a monitorear:
 
 ## 🗂️ Estructura inicial del repositorio (ejemplo)
 /src 
+/scripts
 /docs 
 /examples 
 /proposals 
