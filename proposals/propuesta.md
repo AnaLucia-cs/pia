@@ -12,14 +12,31 @@
 
 ### 🔐 Tarea 1
 - **Título**: Generar hashes de archivos críticos del sistema
-- **Propósito**: [2–3 frases que expliquen qué se busca lograr]
-- **Rol o área relacionada**: [SOC, Red Team, DFIR, etc.]
-- **Entradas esperadas**: [Formato y ejemplos]
-- **Salidas esperadas**: [Formato y ejemplos]
-- **Descripción del procedimiento**: [Narración funcional de lo que hará la tarea]
-- **Complejidad técnica**: [Dimensiones que cubre: parsing, correlación, automatización, librerías]
-- **Controles éticos**: [Uso de datos sintéticos, ambientes controlados, anonimización]
-- **Dependencias**: [Librerías, comandos, entorno, variables de entorno]
+  
+- **Propósito**:Crear una base de datos con los valores hash (SHA256, MD5) de archivos esenciales, sirviendo como referencia del estado “limpio” del sistema.
+  
+- **Rol o área relacionada**: SOC – Seguridad preventiva.
+  
+- **Entradas esperadas**:
+      - Lista de rutas de archivos o directorios (`/etc`, `/bin`, etc.)  
+      - Formato: texto o lista JSON
+  
+- **Salidas esperadas**:
+      - Base de datos (`baseline.db`) con hashes calculados  
+      - Archivo de registro (`init_log.txt`)
+    
+- **Descripción del procedimiento**:
+      1. Recorrer las rutas definidas.  
+      2. Calcular los hashes con `hashlib` (MD5, SHA256).  
+      3. Guardar los resultados en una base SQLite protegida.
+  
+- **Complejidad técnica**: Uso de criptografía de hash, manipulación de archivos, automatización de procesos.
+  
+- **Controles éticos**: No se accederá a archivos privados ni con datos personales; se trabajará solo en entornos controlados o máquinas virtuales.
+  
+- **Dependencias**:
+      - Python 3.x  
+      - Librerías: `hashlib`, `sqlite3`, `os`  
 
 ### 🧭 Tarea 2
 
@@ -97,7 +114,7 @@ README.md [Estado del proyecto]
 | Integrante | Rol o responsabilidad |
 |------------|------------------------|
 | [Ana Lucia Alonso Martínez] | [Automatización de la comparación de hashes] |
-| [Ana Laura Palacios Salazar] | [Ej. análisis y parsing] |
+| [Ana Laura Palacios Salazar] | [Validación y gestión de la base de datos de hashes] |
 | [Maria Izabela Lorencez Narro] | [Ej. integración y orquestación] |
 
 > Los roles pueden ajustarse conforme evolucione el proyecto.
