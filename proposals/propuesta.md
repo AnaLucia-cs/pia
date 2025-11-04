@@ -23,11 +23,35 @@
 
 ### 🧭 Tarea 2
 - **Título**: Verificar periódicmente la integridad de archivos.
-- **Propósito**: [2–3 frases que expliquen qué se busca lograr]
+- **Propósito**: Comprobar que los archivos originales no hayan sido modificados al realizar una comparación de los hashes.
 - **Rol o área relacionada**: Detección.
-- **Entradas esperadas**: [Formato y ejemplos]
-- **Salidas esperadas**: [Formato y ejemplos]
-- **Descripción del procedimiento**: [Narración funcional de lo que hará la tarea]
+- **Entradas esperadas**: 
+Archivo de referencia con los hashes originales
+    -Ejemplo: hashes_bd.csv
+Rutas de los archivos a monitorear:
+    -Ejemplo: ["C:\Windows\Firmware"
+    "C:\Windows\Documents\Base_Datos.csv"]
+    ["/etc/passwd"
+    "/etc/shadow",
+    "/home/tux/important_config.conf"]
+
+- **Salidas esperadas**: Reporte comparando los hashes originales con los actuales, indicando si han sido modificados, eliminados o no existen.
+    -Ejemplo:
+    [/etc/passwd] [INTACTO]
+    [/etc/shadow] [MODIFICADO]
+    [/home/tux/important_config.conf] [NO ENCONTRADO]
+
+    [C:\Windows\Firmware] [INTACTO]
+    [C:\Windows\Documents\Base_Datos.csv] [ELIMINADO]
+
+- **Descripción del procedimiento**: 
+1. Leer el archivo con los hashes originales
+2. Recorrer las rutas indicadas y calcular el hash del archivo
+3. Comparar los hashes
+4. Registrar los resultados en el reporte
+5. Enviar alertas si se detectaron modificaciones, eliminaciones o nuevos archivos no registrados. 
+6. Programar la próxima ejecución del proceso.
+
 - **Complejidad técnica**: [Dimensiones que cubre: parsing, correlación, automatización, librerías]
 - **Controles éticos**: [Uso de datos sintéticos, ambientes controlados, anonimización]
 - **Dependencias**: [Librerías, comandos, entorno, variables de entorno]
