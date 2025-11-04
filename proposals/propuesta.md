@@ -82,15 +82,49 @@ Los resultados deben almacenarse de forma segura y anonimizada si contienen ruta
 - **Dependencias**: [Hashlib, os, datetime, logging, pyautogui, subprocess]
 
 ### 🧠 Tarea 3 (opcional)
-- **Título**: [Nombre de la tarea]
-- **Propósito**: [2–3 frases que expliquen qué se busca lograr]
-- **Rol o área relacionada**: [SOC, Red Team, DFIR, etc.]
-- **Entradas esperadas**: [Formato y ejemplos]
-- **Salidas esperadas**: [Formato y ejemplos]
-- **Descripción del procedimiento**: [Narración funcional de lo que hará la tarea]
-- **Complejidad técnica**: [Dimensiones que cubre: parsing, correlación, automatización, librerías]
-- **Controles éticos**: [Uso de datos sintéticos, ambientes controlados, anonimización]
-- **Dependencias**: [Librerías, comandos, entorno, variables de entorno]
+- **Título**: Generación automática de reportes y alerta ante cambios detectados
+  
+- **Propósito**: Elaborar un reporte detallado y enviar una alerta automática cuando se detecten modificaciones, eliminaciones o incorporaciones de archivos respecto a la línea base de integridad.
+Busca notificar oportunamente al equipo de seguridad sobre posibles alteraciones no autorizadas.
+
+- **Rol o área relacionada**: SOC, DFIR
+  
+- **Entradas esperadas**: Reporte de verificación de integridad generado en la Tarea 2.
+[/etc/passwd] [INTACTO]  
+[/etc/shadow] [MODIFICADO]  
+[/home/tux/important_config.conf] [NO ENCONTRADO]
+
+- **Salidas esperadas**: Reporte final con fecha y hora de los cambios detectados (alert_report.json o .csv).
+  Alerta enviada por correo, notificación en SIEM o mensaje en consola.
+  {
+  "fecha": "2025-11-03T14:12:00Z",
+  "archivo": "/etc/shadow",
+  "estado": "MODIFICADO",
+  "acción": "Enviar alerta al SOC"
+}
+
+- **Descripción del procedimiento**:
+1-Leer el resultado del monitoreo de integridad (Tarea 2).
+2-Filtrar los registros con estado “MODIFICADO”, “ELIMINADO” o “NO ENCONTRADO”.
+3-Generar un reporte consolidado con la fecha, hora y tipo de cambio.
+4-Enviar una alerta automática (correo, log central, o API).
+5-Guardar evidencia en el historial de alertas.
+  
+- **Complejidad técnica**:
+Parsing y análisis de logs o reportes previos.
+Automatización de reportes y envío de alertas.
+Integración con servicios de correo o SIEM.
+Uso de librerías: json, smtplib, logging, os, datetime.
+
+- **Controles éticos**:
+Pruebas realizadas con datos sintéticos o simulados.
+No incluir rutas ni nombres de archivos con información sensible.
+Las notificaciones se realizarán solo en entornos de laboratorio o controlados.
+
+- **Dependencias**:
+Python 3.x
+Librerías: json, logging, smtplib, os, datetime
+Variables de entorno: ALERTA_EMAIL, SMTP_SERVER, HASH_REPORT_PATH
 
 ---
 
@@ -115,7 +149,7 @@ README.md [Estado del proyecto]
 |------------|------------------------|
 | [Ana Lucia Alonso Martínez] | [Automatización de la comparación de hashes] |
 | [Ana Laura Palacios Salazar] | [Validación y gestión de la base de datos de hashes] |
-| [Maria Izabela Lorencez Narro] | [Ej. integración y orquestación] |
+| [Maria Izabela Lorencez Narro] | [Detección y alerta de modificaciones en archivos críticos] |
 
 > Los roles pueden ajustarse conforme evolucione el proyecto.
 
