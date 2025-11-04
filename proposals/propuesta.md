@@ -23,18 +23,17 @@
 
 ### 🧭 Tarea 2
 - **Título**: Verificar periódicmente la integridad de archivos.
+
 - **Propósito**: Comprobar que los archivos originales no hayan sido modificados al realizar una comparación de los hashes.
+
 - **Rol o área relacionada**: Detección.
+
 - **Entradas esperadas**: 
 Archivo de referencia con los hashes originales
     -Ejemplo: hashes_bd.csv
 Rutas de los archivos a monitorear:
-    -Ejemplo: ["C:\Windows\Firmware"
-    "C:\Windows\Documents\Base_Datos.csv"]
-    
-    ["/etc/passwd"
-    "/etc/shadow",
-    "/home/tux/important_config.conf"]
+    -Ejemplo: ["C:\Windows\Firmware", "C:\Windows\Documents\Base_Datos.csv"]
+              ["/etc/passwd", "/etc/shadow", "/home/tux/important_config.conf"]
 
 - **Salidas esperadas**: Reporte comparando los hashes originales con los actuales, indicando si han sido modificados, eliminados o no existen.
     -Ejemplo:
@@ -44,6 +43,7 @@ Rutas de los archivos a monitorear:
 
     [C:\Windows\Firmware] [INTACTO]
     [C:\Windows\Documents\Base_Datos.csv] [ELIMINADO]
+
 - **Descripción del procedimiento**: 
 1. Leer el archivo con los hashes originales
 2. Recorrer las rutas indicadas y calcular el hash del archivo
@@ -51,6 +51,7 @@ Rutas de los archivos a monitorear:
 4. Registrar los resultados en el reporte
 5. Enviar alertas si se detectaron modificaciones, eliminaciones o nuevos archivos no registrados. 
 6. Programar la próxima ejecución del proceso.
+
 - **Complejidad técnica**: 
 Lectura y procesamiento de archivos de texto con hashes.
 Comparación entre valores.
@@ -94,7 +95,7 @@ README.md (se revisará versión completa al final)
 
 | Integrante | Rol o responsabilidad |
 |------------|------------------------|
-| [Ana Lucia Alonso Martínez] | [Ej. adquisición de datos] |
+| [Ana Lucia Alonso Martínez] | [Automatización de la comparación de hashes] |
 | [Ana Laura Palacios Salazar] | [Ej. análisis y parsing] |
 | [Maria Izabela Lorencez Narro] | [Ej. integración y orquestación] |
 
