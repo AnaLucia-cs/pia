@@ -22,6 +22,7 @@
 - **Dependencias**: [Librerías, comandos, entorno, variables de entorno]
 
 ### 🧭 Tarea 2
+
 - **Título**: Verificar periódicmente la integridad de archivos.
 
 - **Propósito**: Comprobar que los archivos originales no hayan sido modificados al realizar una comparación de los hashes.
@@ -77,15 +78,15 @@ Los resultados deben almacenarse de forma segura y anonimizada si contienen ruta
 ---
 
 ## 🗂️ Estructura inicial del repositorio (ejemplo)
-/src 
-/scripts
-/docs 
-/examples 
-/proposals 
-/tests 
-/prompts 
-README.md (se revisará versión completa al final)
-.gitignore
+
+/src [Código funcional de las tareas]
+/scripts [Script principal]
+/docs [Detalles sobre cada actualización]
+/examples [Evidencias de ejecución]
+/proposals [Propuesta de proyecto]
+/tests [Pruebas de ejecución]
+/prompts [Información de prompt]
+README.md [Estado del proyecto]
 
 > Esta estructura puede crecer conforme avance el proyecto. Cada carpeta tendrá una función clara y estará documentada en `/docs`.
 
@@ -114,7 +115,6 @@ El equipo se compromete a documentar cualquier riesgo ético y aplicar medidas d
 
 - [ ] Commits realizados por más de un integrante
 - [ ] Issues creados para organizar tareas
-- [ ] Pull requests abiertos o revisados
 - [ ] Actividad visible en GitHub desde el inicio del proyecto
 
 ---
