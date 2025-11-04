@@ -1,7 +1,7 @@
 # 🧩 Propuesta técnica del proyecto PIA
 
 ## 🛡️ Título del proyecto
-> [Nombre representativo que refleje el enfoque general]
+> Protección y control de integridad
 
 ## 📌 Descripción general del proyecto
 > Breve explicación del propósito, enfoque y tipo de tareas de ciberseguridad que se abordarán.
@@ -11,7 +11,7 @@
 ## 🧪 Tareas propuestas
 
 ### 🔐 Tarea 1
-- **Título**: [Nombre de la tarea]
+- **Título**: Generar hashes de archivos críticos del sistema
 - **Propósito**: [2–3 frases que expliquen qué se busca lograr]
 - **Rol o área relacionada**: [SOC, Red Team, DFIR, etc.]
 - **Entradas esperadas**: [Formato y ejemplos]
@@ -22,10 +22,26 @@
 - **Dependencias**: [Librerías, comandos, entorno, variables de entorno]
 
 ### 🧭 Tarea 2
-> [Repetir la misma estructura si aplica]
+- **Título**: Verificar periódicmente la integridad de archivos.
+- **Propósito**: [2–3 frases que expliquen qué se busca lograr]
+- **Rol o área relacionada**: Detección.
+- **Entradas esperadas**: [Formato y ejemplos]
+- **Salidas esperadas**: [Formato y ejemplos]
+- **Descripción del procedimiento**: [Narración funcional de lo que hará la tarea]
+- **Complejidad técnica**: [Dimensiones que cubre: parsing, correlación, automatización, librerías]
+- **Controles éticos**: [Uso de datos sintéticos, ambientes controlados, anonimización]
+- **Dependencias**: [Librerías, comandos, entorno, variables de entorno]
 
 ### 🧠 Tarea 3 (opcional)
-> [Agregar si el equipo planea una tercera tarea desde el inicio]
+- **Título**: [Nombre de la tarea]
+- **Propósito**: [2–3 frases que expliquen qué se busca lograr]
+- **Rol o área relacionada**: [SOC, Red Team, DFIR, etc.]
+- **Entradas esperadas**: [Formato y ejemplos]
+- **Salidas esperadas**: [Formato y ejemplos]
+- **Descripción del procedimiento**: [Narración funcional de lo que hará la tarea]
+- **Complejidad técnica**: [Dimensiones que cubre: parsing, correlación, automatización, librerías]
+- **Controles éticos**: [Uso de datos sintéticos, ambientes controlados, anonimización]
+- **Dependencias**: [Librerías, comandos, entorno, variables de entorno]
 
 ---
 
