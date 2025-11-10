@@ -1,22 +1,15 @@
-#!/usr/bin/env python3
-# -----------------------------------------------------------
 # hash_baseline.py
-# -----------------------------------------------------------
 # Propósito:
 #   Generar una base de datos con los valores hash (MD5 y SHA256)
 #   de archivos críticos del sistema, para crear una “línea base”
 #   que sirva como referencia del estado limpio del sistema.
-#
 # Entradas:
 #   - Archivo con lista de rutas (TXT o JSON)
-#
 # Salidas:
 #   - Base de datos SQLite (baseline.db)
 #   - Archivos de registro: init_log.txt (legible) y logs.jsonl (estructurado)
-#
 # Autor: [Ana Laura Palacios Salazar]
 # Fecha: [09/11/25]
-# -----------------------------------------------------------
 
 import argparse
 import hashlib
@@ -27,10 +20,7 @@ import sys
 import time
 from pathlib import Path
 
-
-# -----------------------------------------------------------
 # Función: leer lista de archivos
-# -----------------------------------------------------------
 def leer_lista_rutas(path: Path):
     """
     Lee una lista de rutas desde un archivo .txt o .json
@@ -47,9 +37,7 @@ def leer_lista_rutas(path: Path):
         return [Path(l) for l in lineas]
 
 
-# -----------------------------------------------------------
 # Función: recorrer archivos
-# -----------------------------------------------------------
 def recorrer_archivos(rutas):
     """
     Genera cada archivo encontrado en las rutas dadas.
@@ -72,9 +60,7 @@ def recorrer_archivos(rutas):
             yield ruta
 
 
-# -----------------------------------------------------------
 # Función: calcular hashes
-# -----------------------------------------------------------
 def calcular_hash(archivo: Path, chunk_size=8192):
     """
     Calcula los hashes MD5 y SHA256 de un archivo.
@@ -94,9 +80,7 @@ def calcular_hash(archivo: Path, chunk_size=8192):
         return None, None, str(e)
 
 
-# -----------------------------------------------------------
 # Función: crear base de datos
-# -----------------------------------------------------------
 def asegurar_base(conn: sqlite3.Connection):
     """
     Crea la tabla baseline si no existe.
@@ -115,10 +99,7 @@ def asegurar_base(conn: sqlite3.Connection):
     """)
     conn.commit()
 
-
-# -----------------------------------------------------------
 # Función: guardar registro
-# -----------------------------------------------------------
 def guardar_registro(conn: sqlite3.Connection, ruta: str, md5: str, sha256: str, tamaño: int, mtime: float):
     """
     Inserta o actualiza un registro en la base de datos.
@@ -131,9 +112,7 @@ def guardar_registro(conn: sqlite3.Connection, ruta: str, md5: str, sha256: str,
     conn.commit()
 
 
-# -----------------------------------------------------------
 # Función: restringir permisos del archivo
-# -----------------------------------------------------------
 def restringir_permisos(path: Path):
     """
     Intenta aplicar permisos 600 (solo dueño) en sistemas compatibles.
@@ -143,10 +122,7 @@ def restringir_permisos(path: Path):
     except Exception:
         pass  # Ignorar en sistemas que no lo soportan
 
-
-# -----------------------------------------------------------
 # Función principal
-# -----------------------------------------------------------
 def main(args=None):
     parser = argparse.ArgumentParser(
         description="Generar baseline de hashes (MD5, SHA256) de archivos críticos del sistema"
@@ -219,11 +195,10 @@ def main(args=None):
     log_fh.close()
     conn.close()
 
-    print("✅ Ejecución completada correctamente. Revisa 'logs.jsonl' y 'baseline.db'.")
+    print(" Ejecución completada correctamente. Revisa 'logs.jsonl' y 'baseline.db'.")
 
 
-# -----------------------------------------------------------
 # Punto de entrada
-# -----------------------------------------------------------
 if __name__ == "__main__":
     main()
+
