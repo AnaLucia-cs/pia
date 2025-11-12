@@ -1,0 +1,7 @@
+Ejecución: Wed Nov 12 06:37:12 2025
+C:\Users\Nana\Pictures\Camera Roll\WIN_20251031_18_28_58_Pro.jpg: ELIMINADA
+C:\Users\Nana\Documents\Fakiu\PC\Resolución_DNS.docx: INTACTA
+C:\Users\Nana\Documents\Fakiu\PC\scripts\T3\escaneo.py: INTACTA
+C:\Users\Nana\Downloads\LFS_10.1.ova: INTACTA
+
+

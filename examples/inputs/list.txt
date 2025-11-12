@@ -1,6 +1,2 @@
 C:\Windows\System32\notepad.exe
 C:\Windows\System32\cmd.exe
-/etc/passwd
-/etc/hosts
-/bin/ls
-/bin/echo

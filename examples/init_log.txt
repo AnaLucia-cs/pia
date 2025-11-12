@@ -13,3 +13,9 @@ Archivo de entrada: examples\inputs\list.txt
 Base de datos: examples\baseline.db
 Archivo de log JSONL: examples\logs.jsonl
 
+Comparación de hashes - iniciada: Wed Nov 12 13:08:19 2025
+Archivo de entrada: rutas.txt
+Base de datos baseline: baseline.db
+Archivo de log JSONL: logs.jsonl
+Archivo con historial de cambios: historial_modif.txt
+

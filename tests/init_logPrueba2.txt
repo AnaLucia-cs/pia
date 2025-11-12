@@ -1,0 +1,80 @@
+Ejecución iniciada: Wed Nov 12 02:36:50 2025
+Archivo de entrada: rutas.txt
+Base de datos: baseline
+Archivo de log JSONL: logs.jsonl
+
+Ejecución iniciada: Wed Nov 12 02:37:34 2025
+Archivo de entrada: rutas.txt
+Base de datos: baseline.db
+Archivo de log JSONL: logs.jsonl
+
+Ejecución iniciada: Wed Nov 12 02:38:46 2025
+Archivo de entrada: rutas.txt
+Base de datos: baseline.db
+Archivo de log JSONL: logs.jsonl
+
+Ejecución iniciada: Wed Nov 12 03:06:35 2025
+Archivo de entrada: rutas.txt
+Base de datos: baseline.db
+Archivo de log JSONL: logs.jsonl
+
+Ejecución iniciada: Wed Nov 12 05:48:08 2025
+Archivo de entrada: rutas.txt
+Base de datos: baseline.db
+Archivo de log JSONL: logs.jsonl
+
+Ejecución iniciada: Wed Nov 12 06:25:23 2025
+Archivo de entrada: rutas.txt
+Base de datos: baseline.db
+Archivo de log JSONL: logs.jsonl
+
+Ejecución iniciada: Wed Nov 12 06:26:42 2025
+Archivo de entrada: rutas.txt
+Base de datos: baseline.db
+Archivo de log JSONL: logs.jsonl
+
+Ejecución tarea2 - iniciada: Wed Nov 12 06:37:06 2025
+Archivo de entrada: rutas.txt
+Base de datos baseline: baseline.db
+Archivo de log JSONL: logs.jsonl
+
+Comparación de hashes - iniciada: Wed Nov 12 11:26:16 2025
+Archivo de entrada: rutas.txt
+Base de datos baseline: baseline.db
+Archivo de log JSONL: logs.jsonl
+
+Comparación de hashes - iniciada: Wed Nov 12 11:33:17 2025
+Archivo de entrada: rutas.txt
+Base de datos baseline: baseline.db
+Archivo de log JSONL: logs.jsonl
+Archivo con historial de cambios: comparison_summary.txt
+
+Ejecución iniciada: Wed Nov 12 12:03:54 2025
+Archivo de entrada: rutas.txt
+Base de datos: baseline.db
+Archivo de log JSONL: logs.jsonl
+
+Comparación de hashes - iniciada: Wed Nov 12 12:04:24 2025
+Archivo de entrada: rutas.txt
+Base de datos baseline: baseline.db
+Archivo de log JSONL: logs.jsonl
+Archivo con historial de cambios: historial_modif.txt
+
+Comparación de hashes - iniciada: Wed Nov 12 13:05:35 2025
+Archivo de entrada: rutas.txt
+Base de datos baseline: baseline.db
+Archivo de log JSONL: logs.jsonl
+Archivo con historial de cambios: historial_modif.txt
+
+Comparación de hashes - iniciada: Wed Nov 12 13:07:14 2025
+Archivo de entrada: rutas.txt
+Base de datos baseline: baseline.db
+Archivo de log JSONL: logs.jsonl
+Archivo con historial de cambios: comparison_summary.txt
+
+Comparación de hashes - iniciada: Wed Nov 12 13:08:19 2025
+Archivo de entrada: rutas.txt
+Base de datos baseline: baseline.db
+Archivo de log JSONL: logs.jsonl
+Archivo con historial de cambios: historial_modif.txt
+

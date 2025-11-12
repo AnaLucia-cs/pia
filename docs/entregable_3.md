@@ -6,20 +6,24 @@
 
 ## 🧪 Tareas integradas
 
-- **Tarea 1**: [Nombre]
-- **Tarea 2**: [Nombre]
+- **Tarea 1**: Generar hashes de archivos críticos del sistema
+- **Tarea 2**: Verificar la integridad de archivos.
 - **Descripción de la integración**:  
-  > [Narración funcional del flujo entre tareas: cómo se conectan, qué datos comparten, qué salidas se generan.]
+  > La tarea 1 genera los hashes de las rutas especificadas en un archivo .txt ('rutas.txt') y guarda los resultados en una base de datos de SQLite ('baseline.db'). 
+  > La tarea 2 genera los hashes de las rutas especificadas en un archivo .txt y los compara con aquellos que están en la base de datos. 
+  > La tarea 2 genera un archivo donde se almacenan los resultados del análisis con fechas.
+  >Durante ambas ejecuciones se registran eventos y resultados en un log estructurado en formato JSON Lines.
+  > Ambos scripts son controlados por un archivo de powershell, el cual te permite elegir entre ambas opciones y maneja las entradas de datos que se deben ingresar de forma amigable.
 
 ---
 
 ## 🧬 Uso de dos lenguajes de programación
 
-- **Lenguajes utilizados**: [Ej. Python + Bash / Python + PowerShell]
+- **Lenguajes utilizados**:  Python + PowerShell
 - **Forma de integración**:  
-  > [Explicar si el script principal invoca módulos en otro lenguaje, si hay módulos funcionales independientes, o si se combinan en la orquestación.]
+  > El script principal de powershell navega entre carpetas hasta llegar a donde están almacenados los scripts de python, donde los ejecuta según decida el usuario por medio del menú de opciones. 
 
-- **Archivo relevante**: [`/scripts/run_pipeline.sh`] o [`/scripts/modulo_funcional.ps1`]
+- **Archivo relevante**: [`/scripts/controlador.ps1`]
 
 ---
 

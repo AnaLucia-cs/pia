@@ -40,15 +40,15 @@
 
 ### 🧭 Tarea 2
 
-- **Título**: Verificar periódicmente la integridad de archivos.
+- **Título**: Verificar la integridad de archivos.
 
-- **Propósito**: Comprobar que los archivos originales no hayan sido modificados al realizar una comparación de los hashes.
+- **Propósito**: Comprobar la integridad de los archivos importantes en los sistemas al realizar una comparación de los hashes.
 
 - **Rol o área relacionada**: Detección.
 
 - **Entradas esperadas**: 
 Archivo de referencia con los hashes originales
-    -Ejemplo: hashes_bd.csv
+    -Ejemplo: hashes_bd.db
 Rutas de los archivos a monitorear:
     -Ejemplo: ["C:\Windows\Firmware", "C:\Windows\Documents\Base_Datos.csv"]
               ["/etc/passwd", "/etc/shadow", "/home/tux/important_config.conf"]
@@ -59,15 +59,11 @@ Rutas de los archivos a monitorear:
     [/etc/shadow] [MODIFICADO]
     [/home/tux/important_config.conf] [NO ENCONTRADO]
 
-    [C:\Windows\Firmware] [INTACTO]
-    [C:\Windows\Documents\Base_Datos.csv] [ELIMINADO]
-
 - **Descripción del procedimiento**: 
 1. Leer el archivo con los hashes originales
 2. Recorrer las rutas indicadas y calcular el hash del archivo
 3. Comparar los hashes
-4. Registrar los resultados en el reporte
-5. Enviar alertas si se detectaron modificaciones, eliminaciones o nuevos archivos no registrados. 
+4. Registrar los resultados en un log
 6. Programar la próxima ejecución del proceso.
 
 - **Complejidad técnica**: 
@@ -81,7 +77,7 @@ Evitar incluir archivos con datos personales o sensibles
 Los resultados deben almacenarse de forma segura y anonimizada si contienen rutas personales.
 - **Dependencias**: [Hashlib, os, datetime, logging, pyautogui, subprocess]
 
-### 🧠 Tarea 3 (opcional)
+### 🧠 Tarea 3 
 - **Título**: Generación automática de reportes y alerta ante cambios detectados
   
 - **Propósito**: Elaborar un reporte detallado y enviar una alerta automática cuando se detecten modificaciones, eliminaciones o incorporaciones de archivos respecto a la línea base de integridad.
