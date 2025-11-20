@@ -30,12 +30,12 @@
 ## 🧠 Plan de uso de IA
 
 - **Propósito del uso de IA**:  
-  > [Ej. enriquecer reportes, priorizar hallazgos, redactar resúmenes]
+  > Analiza los cambios detectados y determina si parecen modificaciones legitimas o potencialmente maliciosas.
 
 - **Punto de integración en el flujo**:  
-  > [Dónde se invoca la IA y qué datos utiliza]
+  > La API de IA debe integrarse justo después de detectar una modificación y antes de restaurar un archivo.
 
-- **Modelo/API previsto**: [Ej. GPT-lite, OpenAI, HuggingFace]
+- **Modelo/API previsto**: [ChatGPT, OpenAI, Copilot]
 
 - **Archivo del plan**: [`/docs/ai_plan.md`](ai_plan.md)
 
