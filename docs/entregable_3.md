@@ -62,7 +62,7 @@
 
 ## 🤝 Colaboración
 
-> En este entregable Izabela Lorencez se encargó del plan de uso del API de IA.
+> En este entregable Izabela Lorencez se encargó del plan de uso del API de IA. Ana Alonso realizó el script maestro y la tarea 2, permitiendo ejecutar las tareas desde un menú. Finalmente Ana Laura Palacios se encargó de la primer tarea y creó una base de datos para mantener los hashes de los archivos en orden.
 
 ---
 
