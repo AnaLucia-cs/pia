@@ -40,3 +40,5 @@ Finalmente se creó un script principal de powershell (`controlador.ps1`), el cu
 Este avance representa la tercera versión funcional del sistema de protección de integridad, sirviendo como base para la Tarea 3 (alertas automáticas).
 
 Se mantiene el cumplimiento de los controles éticos y se trabaja en entornos controlados de laboratorio.
+
+También se desarrollo el plan a seguir para el uso de la API de inteligencia artificial, el cuál sera de mucha ayuda a la hora de clasificar el nivel de modificaciones en caso de que existan, y podere restaurar los archivos dañados.
