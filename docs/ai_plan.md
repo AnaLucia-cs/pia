@@ -1,13 +1,13 @@
-🛡️ Sistema de Integridad de Archivos con IA
+## 🛡️ Sistema de Integridad de Archivos con IA
 Proyecto de Seguridad en Tecnologías de la Información
 
-📌 Descripción del Proyecto
+## 📌 Descripción del Proyecto
 Este proyecto implementa un Sistema Automático de Verificación de Integridad de Archivos, que permite detectar modificaciones no autorizadas, registrar cambios y restaurar archivos afectados desde una copia de seguridad.
 Además, incluye integración con una API de Inteligencia Artificial que analiza los cambios detectados y determina si parecen modificaciones legítimas o potencialmente maliciosas.
 
 El objetivo es brindar una capa adicional de seguridad y análisis inteligente dentro de un entorno de monitoreo.
 
-🚀 Funcionalidades Principales
+## 🚀 Funcionalidades Principales
 Análisis de modificaciones con IA (Función adicional)
 Cada vez que se detecta un cambio en un archivo, el sistema envía:
 -Nombre del archivo modificado
@@ -21,7 +21,7 @@ La API de IA devuelve:
 -Recomendaciones de acción
 Esto permite priorizar incidentes y reducir falsos positivos.
 
-🧩 Arquitectura del Sistema
+## 🧩 Arquitectura del Sistema
 ┌──────────────────┐
 │ Archivos Monitoreados
 └───────┬──────────┘
@@ -47,7 +47,7 @@ Esto permite priorizar incidentes y reducir falsos positivos.
 │ Restauración desde Backup (Tarea 3)
 └────────────────────────┘
 
-☎️ Tipo de modelo/API a utilizar
+## ☎️ Tipo de modelo/API a utilizar
 El sistema utilizará un modelo de lenguaje accesible mediante API y orientado al análisis contextual de texto.
 El modelo debe ser capaz de:
 Analizar contenido textual, incluyendo diffs de archivos.
@@ -60,7 +60,7 @@ OpenAI GPT-4o / ChatGPT / Copilot / Gemini
 
 El proyecto no depende de un proveedor específico: cualquier modelo que acepte prompts estructurados y devuelva JSON es válido.
 
-💭 Ejemplo de prompt inicial
+## 💭 Ejemplo de prompt inicial
 A continuación se muestra el prompt base que el sistema enviará al modelo al detectar una modificación:
 
 Eres un sistema de análisis de integridad de archivos.
@@ -87,10 +87,11 @@ Diferencias detectadas (diff):
 {{diff}}
 
 
-🧪 Estado del Proyecto
+## 🧪 Estado del Proyecto
 🟡 En desarrollo
 ✔ Base de hashes
 ✔ Verificación de integridad
 ⏳ Restauración automática
 ⏳ Integración con IA
 ⏳ Panel de reportes
+
