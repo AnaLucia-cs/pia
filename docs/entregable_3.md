@@ -62,11 +62,22 @@
 
 ## 🤝 Colaboración
 
-> ¿Quién trabajó en esta integración? ¿Cómo se distribuyeron los roles? ¿Qué evidencia hay en GitHub (commits, issues, PRs)?
+> En este entregable Izabela Lorencez se encargó del plan de uso del API de IA.
 
 ---
 
 ## 🧭 Observaciones
 
-> ¿Qué falta por conectar o ajustar? ¿Qué decisiones se tomaron sobre el uso de IA? ¿Qué se aprendió en esta etapa?
- 
+**Falta:**
+-Integrar definitivamente la llamada a la API dentro del flujo principal del verificador de integridad.
+-Añadir pruebas automáticas que simulen modificaciones reales y verifiquen la correcta interacción entre monitor, IA y sistema de restauración.
+-Definir límites y políticas de uso para evitar costos innecesarios o cargas altas de peticiones a la API.
+
+**Decisiones Tomadas:**
+-La IA no ejecuta acciones directas, solo asesora: la decisión final del sistema (restaurar, aceptar o alertar) siempre pasa por las reglas locales.
+-Se optó por un diseño desacoplado: cualquier modelo compatible se puede cambiar sin alterar el resto del sistema.
+-La IA se utiliza solo en el punto crítico del flujo: después de detectar una modificación y antes de restaurar o registrar el cambio.
+
+**Aprendizaje:**
+-Que la IA no sustituye la verificación tradicional: funciona como una capa adicional que complementa la seguridad, no como la base del sistema.
+-Que el análisis de integridad puede beneficiarse significativamente del contexto que aporta un modelo de IA, especialmente para reducir falsos positivos.
