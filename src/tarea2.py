@@ -265,6 +265,10 @@ def main(args=None):
         sf.write("\n")
 
 
+    # Crear historial_modif.txt usando el contenido del resumen
+    historial_path = Path("historial_modif.txt")
+    historial_path.write_text(summary_path.read_text(encoding="utf-8"), encoding="utf-8")
+
 if __name__ == "__main__":
     main()
     print("\n Ejecución completada correctamente. Revisa 'logs.jsonl' e 'historial_modif.txt'. \n")
