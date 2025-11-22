@@ -22,7 +22,20 @@ while ($x -eq $true) {
 
         "b" {
             $archivo_rutas = Read-Host "Ingresa el nombre del archivo con las rutas a comparar (por ejemplo, rutas.txt)"
-            python tarea2.py -i $archivo_rutas -d baseline.db -l logs.jsonl -s historial_modif.txt --initlog init_log.txt
+
+            # Ejecutar Tarea 2 (verificción de Integridad)
+            python tarea2.py -i $archivo_rutas -d baseline.db -l logs.jsonl -s comparison_summary.txt --initlog init_log.txt
+
+            # Ejecuta análisis de IA (analiza historial_modif.txt y recomienda acciones)
+            python analisis_ia.py
+
+            # Pregunta al usuario si desea restaurar
+            $respuesta_restaurar = Read-Host "¿Deseas restaurar archivos modificados? (s/n)"
+            if ($resouesta_restaurar -eq "s") {
+                python tarea3.py --db baseline.db --log restore_log.txt --backup backups
+            }
+
+            # Preguntar si vuelve al menú
             $respuesta = Read-Host "¿Volver al menú? (s/n)"
             if ($respuesta -ne "s") {
                 $x = $false
