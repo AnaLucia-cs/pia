@@ -50,10 +50,10 @@ A la fecha del cuarto entregable, se completaron las Tareas 1 y 2: Generar hashe
 Además se hicieron una pequeñas modificaciones a ambos scripts para que se pudiera realizar la tarea 3 y la implementación de la ia.
 
 Modificaciones a la Tarea 1:
--Se le agregó una función para crear el respaldo de la base de datos (necesario paa la tarea 3)
+- Se le agregó una función para crear el respaldo de la base de datos (necesario paa la tarea 3)
 
 Modificaciones a la Tarea 2:
--Se creó historial_modif.py para que la IA lo pudiera leer
+- Se creó historial_modif.py para que la IA lo pudiera leer
 
 La tarea 3 consiste en:
 Después de verificar si se hicieron cambios (tarea 2) se mandan a analizar por la IA (analisis_ia.py) y este determina si los cambios hechos fueron críticos o no, si los considera como tal, se le notifica al usuario sobre los cambios y sus consecuencias y se le pregunta se deesea volver al respaldo de los archivos modificados, si responde que si, automaticamente se ejecuta el script tarea3.py, que es el respaldo.
