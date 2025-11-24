@@ -6,6 +6,7 @@ while ($x -eq $true) {
     Write-Host "`nMENU DE OPCIONES"
     Write-Host "a) Generar línea base de hashes"
     Write-Host "b) Verificar integridad de archivos"
+    Write-Host "c) Generar reporte"
     Write-Host "c) Salir"
     $opcion = Read-Host "Elige una opción"
 
@@ -31,7 +32,7 @@ while ($x -eq $true) {
 
             # Pregunta al usuario si desea restaurar
             $respuesta_restaurar = Read-Host "¿Deseas restaurar archivos modificados? (s/n)"
-            if ($resouesta_restaurar -eq "s") {
+            if ($respuesta_restaurar -eq "s") {
                 python tarea3.py --db baseline.db --log restore_log.txt --backup backups
             }
 
@@ -44,6 +45,63 @@ while ($x -eq $true) {
         }
 
         "c" {
+            Write-Host "`n--- GENERADOR DE REPORTES ---"
+
+            Write-Host "1) Generar reporte en TXT"
+            Write-Host "2) Generar reporte en Excel (.xlsx)"
+            $tipo = Read-Host "Selecciona el tipo de reporte"
+
+            # Archivos que se incluirán en el reporte
+            $archivos = @(
+                "comparison_summary.txt",
+                "logs.jsonl",
+                "init_log.txt",
+                "restore_log.txt"
+            )
+
+            $reporte = Read-Host "Nombre del archivo de reporte (sin extensión)"
+
+            if ($tipo -eq "1") {
+                $output = "$reporte.txt"
+                Write-Host "Generando reporte TXT..."
+
+                foreach ($file in $archivos) {
+                    if (Test-Path $file) {
+                        Add-Content $output "`n===== $file ====="
+                        Add-Content $output (Get-Content $file)
+                    } else {
+                        Add-Content $output "`n[ADVERTENCIA] No se encontró el archivo $file"
+                    }
+                }
+
+                Write-Host "Reporte generado: $output"
+            }
+
+            elseif ($tipo -eq "2") {
+                $output = "$reporte.xlsx"
+                Write-Host "Generando reporte Excel..."
+
+                foreach ($file in $archivos) {
+                    if (Test-Path $file) {
+                        $contenido = Get-Content $file | ConvertFrom-String
+                        $contenido | Export-Excel -WorksheetName $file -Path $output -AutoSize -Append
+                    } else {
+                        $nota = [PSCustomObject]@{
+                            Mensaje = "No se encontró el archivo $file"
+                        }
+                        $nota | Export-Excel -WorksheetName $file -Path $output -AutoSize -Append
+                    }
+                }
+
+                Write-Host "Reporte generado: $output"
+            }
+
+            else {
+                Write-Host "Opción inválida"
+            }
+        }
+        
+        "d" {
             Write-Host "Saliendo..."
             $x = $false
         }
