@@ -1,4 +1,4 @@
-# hash_baseline.py
+#hash_baseline.py
 # Propósito:
 #   Generar una base de datos con los valores hash (MD5 y SHA256)
 #   de archivos críticos del sistema, para crear una “línea base”
@@ -37,9 +37,10 @@ def crear_backup(db_path: Path):
                 pass
             print(f"📦 Respaldo creado: {backup_path}")
         else:
-            print("⚠️ No se creó respaldo: la base de datos no existe aún.")
+            print("⚠️ Primera ejecución: no hay base anterior para respaldar.")
     except Exception as e:
         print(f"❌ Error al crear el respaldo: {e}")
+
 
 # Función: leer lista de archivos
 def leer_lista_rutas(path: Path):
@@ -165,6 +166,11 @@ def main(args=None):
 
     rutas = leer_lista_rutas(archivo_entrada)
 
+
+    # Crear respaldo ANTES de abrir/modificar la base de datos
+    crear_backup(db_path)
+
+
     # Crear base de datos y tabla
     conn = sqlite3.connect(str(db_path))
     asegurar_base(conn)
@@ -213,10 +219,22 @@ def main(args=None):
         if error is None:
             guardar_registro(conn, str(p), md5, sha256, info.st_size, info.st_mtime)
 
+            # === NUEVO BLOQUE: crear respaldo físico ===
+            backup_folder = Path("backups")
+            backup_folder.mkdir(exist_ok=True)
+
+            respaldo_path = backup_folder / p.name
+            try:
+                respaldo_path.write_bytes(p.read_bytes())
+                print(f"📁 Respaldo físico creado: {respaldo_path}")
+            except Exception as e:
+                print(f"❌ Error al crear respaldo físico de {p}: {e}")
+
+
     log_fh.close()
     conn.close()
 
-    print(" Ejecución completada correctamente. Revisa 'logs.jsonl' y 'baseline.db'.")
+    print(" ✔️ Ejecución completada correctamente. Revisa 'logs.jsonl' y 'baseline.db'.")
 
 
 # Punto de entrada
