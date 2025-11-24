@@ -1,4 +1,4 @@
-cd C:\Users\Nana\Documents\GitHub\pia\src
+cd C:\Users\Iza\Documents\GitHub\pia\src
 
 $x = $true
 
@@ -7,7 +7,7 @@ while ($x -eq $true) {
     Write-Host "a) Generar línea base de hashes"
     Write-Host "b) Verificar integridad de archivos"
     Write-Host "c) Generar reporte"
-    Write-Host "c) Salir"
+    Write-Host "d) Salir"
     $opcion = Read-Host "Elige una opción"
 
     switch ($opcion) {
@@ -23,7 +23,7 @@ while ($x -eq $true) {
 
         "b" {
             $archivo_rutas = Read-Host "Ingresa el nombre del archivo con las rutas a comparar (por ejemplo, rutas.txt)"
-
+            
             # Ejecutar Tarea 2 (verificción de Integridad)
             python tarea2.py -i $archivo_rutas -d baseline.db -l logs.jsonl -s comparison_summary.txt --initlog init_log.txt
 
@@ -43,7 +43,7 @@ while ($x -eq $true) {
                 Write-Host "Saliendo..."
             }
         }
-
+        
         "c" {
             Write-Host "`n--- GENERADOR DE REPORTES ---"
 
@@ -100,7 +100,7 @@ while ($x -eq $true) {
                 Write-Host "Opción inválida"
             }
         }
-        
+
         "d" {
             Write-Host "Saliendo..."
             $x = $false
