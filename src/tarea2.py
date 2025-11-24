@@ -241,8 +241,8 @@ def main(args=None):
     resultado = comparar_con_baseline(hashes_actuales, baseline)
 
     # Impresión final del resultado estructurado (puede usarse posteriormente)
-    print("\nResultado estructurado devuelto por comparar_con_baseline:")
-    print(json.dumps(resultado, indent=2, ensure_ascii=False))
+    #print("\nResultado estructurado devuelto por comparar_con_baseline:")
+    #print(json.dumps(resultado, indent=2, ensure_ascii=False))
 
     # Escribir resumen legible en archivo .txt con fecha y estado por ruta
     summary_path = Path(args.summary)
@@ -263,11 +263,13 @@ def main(args=None):
             err = e.get('error') if isinstance(e, dict) else ''
             sf.write(f"{ruta}: ERROR - {err}\n")
         sf.write("\n")
-
-
+       
+       
     # Crear historial_modif.txt usando el contenido del resumen
     historial_path = Path("historial_modif.txt")
     historial_path.write_text(summary_path.read_text(encoding="utf-8"), encoding="utf-8")
+
+
 
 if __name__ == "__main__":
     main()
