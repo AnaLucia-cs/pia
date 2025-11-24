@@ -32,14 +32,14 @@ def restaurar_archivo(ruta: Path, backup_folder: Path):
 
     # Verifica que exista el archivo respaldado
     if not respaldo.exists():
-        return False, f"No existe respaldo para {ruta}"
+        return False, f"⚠️No existe respaldo físico para {ruta}"
 
     try:
         ruta.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(respaldo, ruta)
-        return True, "Archivo restaurado"
+        return True, "Archivo restaurado desde {respaldo}"
     except Exception as e:
-        return False, str(e)
+        return False, f"❌ Error al restaurar {ruta}: {e}"
 
 
 def main():
@@ -98,7 +98,7 @@ def main():
             print(f"[REST] {ruta} → {msg}")
         else:
             entrada_log["estado"] = "ok"
-            entrada_log["detalle"] = "Sin cambios"
+            entrada_log["detalle"] = "✔ Sin cambios"
             log_data.append(entrada_log)
 
     # Guardar log
@@ -111,3 +111,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
