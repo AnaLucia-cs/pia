@@ -57,3 +57,21 @@ Modificaciones a la Tarea 2:
 
 La tarea 3 consiste en:
 Después de verificar si se hicieron cambios (tarea 2) se mandan a analizar por la IA (analisis_ia.py) y este determina si los cambios hechos fueron críticos o no, si los considera como tal, se le notifica al usuario sobre los cambios y sus consecuencias y se le pregunta se deesea volver al respaldo de los archivos modificados, si responde que si, automaticamente se ejecuta el script tarea3.py, que es el respaldo.
+
+## Estado actual del proyecto (actualización – Entregable 5)
+- La Tarea 1 (hash_baseline) ya genera la línea base de hashes y ahora también crea respaldos físicos de los archivos críticos en la carpeta backups/.
+- La Tarea 2 (detección de cambios) valida correctamente las modificaciones en los archivos comparando contra la base de datos baseline.db.
+- La Tarea 3 (restauración) fue ajustada para restaurar archivos desde los respaldos físicos y mostrar mensajes claros sobre el estado de cada archivo (restaurado, sin cambios, sin respaldo).
+- La integración con IA está implementada, pero requiere una API key válida para funcionar; actualmente el flujo se detiene en esa fase si no se proporciona la clave.
+- Los logs (logs.jsonl, restore_log.txt) y la base de datos (baseline.db) se generan y actualizan correctamente, dejando evidencia del proceso.
+- La estructura del repositorio incluye carpetas para código (/src), documentación (/docs), ejemplos de ejecución (/examples), propuestas (/proposals), pruebas (/tests) y prompts de IA (/prompts).
+- El sistema completo permite:
+- Crear línea base de archivos críticos.
+- Detectar cambios en los archivos.
+- Consultar a la IA para recomendaciones.
+- Restaurar archivos modificados o eliminados desde respaldos físicos.
+- 
+✅ Conclusión
+El proyecto se encuentra funcional y documentado, con las tres tareas principales operativas. La restauración ahora es posible gracias a los respaldos físicos, y el flujo de IA está listo para integrarse plenamente en cuanto se configure la API key.
+
+
