@@ -1,0 +1,30 @@
+
+===== comparison_summary.txt =====
+Ejecución: Mon Nov 24 23:14:45 2025
+C:\Users\Iza\Documents\pia_ejemplos\prueba1.txt: INTACTA
+C:\Users\Iza\Documents\pia_ejemplos\prueba2.docx: INTACTA
+C:\Users\Iza\Documents\pia_ejemplos\prueba3.pptx: INTACTA
+
+
+===== logs.jsonl =====
+{"ruta": "C:\\Users\\Iza\\Documents\\pia_ejemplos\\prueba1.txt", "existe": true, "es_archivo": true, "timestamp": 1764047672.2262774, "tamaño_bytes": 9, "modificado_en": 1764046726.6251063, "md5": "c07919a71b6a35c5d6b61185efbefba8", "sha256": "47b63577e10178a4a2e79901a8d4f93c55041f65a084409272a095fbd36fe43e", "error": null, "estado": "ok"}
+{"ruta": "C:\\Users\\Iza\\Documents\\pia_ejemplos\\prueba2.docx", "existe": true, "es_archivo": true, "timestamp": 1764047672.3426757, "tamaño_bytes": 0, "modificado_en": 1764001710.9059675, "md5": "d41d8cd98f00b204e9800998ecf8427e", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "error": null, "estado": "ok"}
+{"ruta": "C:\\Users\\Iza\\Documents\\pia_ejemplos\\prueba3.pptx", "existe": true, "es_archivo": true, "timestamp": 1764047672.429536, "tamaño_bytes": 0, "modificado_en": 1764001726.2362034, "md5": "d41d8cd98f00b204e9800998ecf8427e", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "error": null, "estado": "ok"}
+{"ruta": "C:\\Users\\Iza\\Documents\\pia_ejemplos\\prueba1.txt", "existe": true, "es_archivo": true, "timestamp": 1764047685.953238, "tamaño_bytes": 9, "modificado_en": 1764046726.6251063, "md5": "c07919a71b6a35c5d6b61185efbefba8", "estado": "ok"}
+{"ruta": "C:\\Users\\Iza\\Documents\\pia_ejemplos\\prueba2.docx", "existe": true, "es_archivo": true, "timestamp": 1764047685.953799, "tamaño_bytes": 0, "modificado_en": 1764001710.9059675, "md5": "d41d8cd98f00b204e9800998ecf8427e", "estado": "ok"}
+{"ruta": "C:\\Users\\Iza\\Documents\\pia_ejemplos\\prueba3.pptx", "existe": true, "es_archivo": true, "timestamp": 1764047685.954248, "tamaño_bytes": 0, "modificado_en": 1764001726.2362034, "md5": "d41d8cd98f00b204e9800998ecf8427e", "estado": "ok"}
+
+===== init_log.txt =====
+Ejecución iniciada: Mon Nov 24 23:14:32 2025
+Archivo de entrada: rutas.txt
+Base de datos: baseline.db
+Archivo de log JSONL: logs.jsonl
+
+Comparación de hashes - iniciada: Mon Nov 24 23:14:45 2025
+Archivo de entrada: rutas.txt
+Base de datos baseline: baseline.db
+Archivo de log JSONL: logs.jsonl
+Archivo con historial de cambios: comparison_summary.txt
+
+
+[ADVERTENCIA] No se encontró el archivo restore_log.txt
