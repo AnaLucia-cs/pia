@@ -1,21 +1,11 @@
-Ejecución iniciada: Sun Nov  9 17:11:10 2025
-Archivo de entrada: examples\inputs\list.txt
-Base de datos: examples\baseline.db
-Archivo de log JSONL: examples\logs.jsonl
+Ejecución iniciada: Mon Nov 24 23:14:32 2025
+Archivo de entrada: rutas.txt
+Base de datos: baseline.db
+Archivo de log JSONL: logs.jsonl
 
-Ejecución iniciada: Sun Nov  9 17:18:57 2025
-Archivo de entrada: examples\inputs\list.txt
-Base de datos: examples\baseline.db
-Archivo de log JSONL: examples\logs.jsonl
-
-Ejecución iniciada: Sun Nov  9 17:23:12 2025
-Archivo de entrada: examples\inputs\list.txt
-Base de datos: examples\baseline.db
-Archivo de log JSONL: examples\logs.jsonl
-
-Comparación de hashes - iniciada: Wed Nov 12 13:08:19 2025
+Comparación de hashes - iniciada: Mon Nov 24 23:14:45 2025
 Archivo de entrada: rutas.txt
 Base de datos baseline: baseline.db
 Archivo de log JSONL: logs.jsonl
-Archivo con historial de cambios: historial_modif.txt
+Archivo con historial de cambios: comparison_summary.txt
 

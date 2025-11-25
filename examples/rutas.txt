@@ -1,0 +1,3 @@
+C:\Users\Iza\Documents\pia_ejemplos\prueba1.txt
+C:\Users\Iza\Documents\pia_ejemplos\prueba2.docx
+C:\Users\Iza\Documents\pia_ejemplos\prueba3.pptx
