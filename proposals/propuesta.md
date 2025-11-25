@@ -78,49 +78,43 @@ Los resultados deben almacenarse de forma segura y anonimizada si contienen ruta
 - **Dependencias**: [Hashlib, os, datetime, logging, pyautogui, subprocess]
 
 ### 🧠 Tarea 3 
-- **Título**: Generación automática de reportes y alerta ante cambios detectados
+- **Título**: - Restauración de archivos modificados o eliminados
   
-- **Propósito**: Elaborar un reporte detallado y enviar una alerta automática cuando se detecten modificaciones, eliminaciones o incorporaciones de archivos respecto a la línea base de integridad.
-Busca notificar oportunamente al equipo de seguridad sobre posibles alteraciones no autorizadas.
+- **Propósito**: Recuperar archivos críticos del sistema que hayan sido alterados o eliminados, utilizando la línea base de hashes y los respaldos físicos generados previamente.
 
-- **Rol o área relacionada**: SOC, DFIR
+- **Rol o área relacionada**: Seguridad informática / Administración de sistemas.
   
-- **Entradas esperadas**: Reporte de verificación de integridad generado en la Tarea 2.
-[/etc/passwd] [INTACTO]  
-[/etc/shadow] [MODIFICADO]  
-[/home/tux/important_config.conf] [NO ENCONTRADO]
+- **Entradas esperadas**: - Base de datos baseline.db con los hashes originales.
+- Carpeta backups/ con copias físicas de los archivos respaldados.
+- Archivo de log de salida (restore_log.txt) para registrar el proceso.
 
-- **Salidas esperadas**: Reporte final con fecha y hora de los cambios detectados (alert_report.json o .csv).
-  Alerta enviada por correo, notificación en SIEM o mensaje en consola.
-  {
-  "fecha": "2025-11-03T14:12:00Z",
-  "archivo": "/etc/shadow",
-  "estado": "MODIFICADO",
-  "acción": "Enviar alerta al SOC"
-}
+- **Salidas esperadas**: - Archivos restaurados en su ubicación original.
+- Log detallado con el estado de cada archivo (restaurado, sin cambios, error, sin respaldo).
+- Mensajes en consola que informan el resultado de cada acción.
 
 - **Descripción del procedimiento**:
-1-Leer el resultado del monitoreo de integridad (Tarea 2).
-2-Filtrar los registros con estado “MODIFICADO”, “ELIMINADO” o “NO ENCONTRADO”.
-3-Generar un reporte consolidado con la fecha, hora y tipo de cambio.
-4-Enviar una alerta automática (correo, log central, o API).
-5-Guardar evidencia en el historial de alertas.
+  1-Se abre la base de datos baseline.db y se recorren los registros de archivos críticos.
+  2-Para cada archivo:
+    - Si no existe en el sistema, se intenta restaurar desde la carpeta backups/.
+    - Si existe, se calcula su hash actual y se compara con el hash original.
+    - Si el hash no coincide, se restaura desde el respaldo físico.
+    - Si coincide, se marca como “sin cambios”.
+  3-Se registra cada acción en el archivo de log y se muestra en consola.
+  4-Al finalizar, se confirma que la restauración se completó.
+
   
-- **Complejidad técnica**:
-Parsing y análisis de logs o reportes previos.
-Automatización de reportes y envío de alertas.
-Integración con servicios de correo o SIEM.
-Uso de librerías: json, smtplib, logging, os, datetime.
+- **Complejidad técnica**: Media. Requiere manejo de bases de datos SQLite, cálculo de hashes, operaciones de copia de archivos y control de errores. 
+
 
 - **Controles éticos**:
-Pruebas realizadas con datos sintéticos o simulados.
-No incluir rutas ni nombres de archivos con información sensible.
-Las notificaciones se realizarán solo en entornos de laboratorio o controlados.
+- Garantizar que la restauración solo se aplique a archivos críticos definidos en la línea base.
+- Evitar sobrescribir archivos sin respaldo válido.
+- Mantener transparencia en los logs para que el administrador pueda auditar las acciones realizadas.
 
 - **Dependencias**:
-Python 3.x
-Librerías: json, logging, smtplib, os, datetime
-Variables de entorno: ALERTA_EMAIL, SMTP_SERVER, HASH_REPORT_PATH
+- baseline.db generado en la Tarea 1.
+- Carpeta backups/ creada durante la Tarea 1.
+- Librerías estándar de Python: sqlite3, hashlib, shutil, json, pathlib.
 
 ---
 
@@ -145,7 +139,7 @@ README.md [Estado del proyecto]
 |------------|------------------------|
 | [Ana Lucia Alonso Martínez] | [Automatización de la comparación de hashes] |
 | [Ana Laura Palacios Salazar] | [Validación y gestión de la base de datos de hashes] |
-| [Maria Izabela Lorencez Narro] | [Detección y alerta de modificaciones en archivos críticos] |
+| [Maria Izabela Lorencez Narro] | [Implemetación de la IA para recomendaciones de acciones sobre archivos modificados, Creación del backup de los archivos en las rutas dadas, Automatización de la restauración de archivos modificados, Bloque de generador de reportes] |
 
 > Los roles pueden ajustarse conforme evolucione el proyecto.
 
@@ -160,9 +154,9 @@ El equipo se compromete a documentar cualquier riesgo ético y aplicar medidas d
 
 ## 🤝 Evidencia de colaboración inicial (elegir uno o más)
 
-- [ ] Commits realizados por más de un integrante
+- [ ✔️] Commits realizados por más de un integrante
 - [ ] Issues creados para organizar tareas
-- [ ] Actividad visible en GitHub desde el inicio del proyecto
+- [ ✔️] Actividad visible en GitHub desde el inicio del proyecto
 
 ---
 
