@@ -1,0 +1,11 @@
+Prompt para la IA:
+	
+    Soy un analista de ciberseguridad.
+    Este es el historial de modificaciones detectado:
+
+    {contenido}
+
+    Por favor:
+    1. Identifica archivos sospechosos.
+    2. Explica brevemente las razones.
+    3. Da una recomendación final (ej. 'restaurar' o 'no restaurar').
