@@ -20,28 +20,6 @@ import sys
 import time
 from pathlib import Path
 
-# Función: respaldo de la base de datos
-def crear_backup(db_path: Path):
-    """
-    Crea un respaldo del archivo SQLite antes de modificarlo.
-    El respaldo se guarda como baseline.db.bak_<timestamp>.
-    """
-    try:
-        if db_path.exists():
-            timestamp = time.strftime("%Y%m%d_%H%M%S")
-            backup_path = db_path.with_suffix(f".db.bak_{timestamp}")
-            backup_path.write_bytes(db_path.read_bytes())
-            try:
-                backup_path.chmod(0o600)
-            except Exception:
-                pass
-            print(f"📦 Respaldo creado: {backup_path}")
-        else:
-            print("⚠️ Primera ejecución: no hay base anterior para respaldar.")
-    except Exception as e:
-        print(f"❌ Error al crear el respaldo: {e}")
-
-
 # Función: leer lista de archivos
 def leer_lista_rutas(path: Path):
     """
@@ -240,5 +218,6 @@ def main(args=None):
 # Punto de entrada
 if __name__ == "__main__":
     main()
+
 
 
