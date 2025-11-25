@@ -144,11 +144,6 @@ def main(args=None):
 
     rutas = leer_lista_rutas(archivo_entrada)
 
-
-    # Crear respaldo ANTES de abrir/modificar la base de datos
-    crear_backup(db_path)
-
-
     # Crear base de datos y tabla
     conn = sqlite3.connect(str(db_path))
     asegurar_base(conn)
@@ -218,6 +213,7 @@ def main(args=None):
 # Punto de entrada
 if __name__ == "__main__":
     main()
+
 
 
 
