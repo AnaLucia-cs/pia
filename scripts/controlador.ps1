@@ -1,4 +1,4 @@
-cd C:\Users\Iza\Documents\GitHub\pia\src
+cd src
 # Se necesita 'Install-Module -Name ImportExcel -Scope CurrentUser'
 
 $x = $true

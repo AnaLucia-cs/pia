@@ -114,7 +114,7 @@ def guardar_registro(conn: sqlite3.Connection, ruta: str, md5: str, sha256: str,
 
 # Función: restringir permisos del archivo
 def restringir_permisos(path: Path):
-    """
+    """ 
     Intenta aplicar permisos 600 (solo dueño) en sistemas compatibles.
     """
     try:

@@ -1,0 +1,11 @@
+Comparación de hashes - iniciada: Wed Nov 26 13:02:19 2025
+Archivo de entrada: rutas.txt
+Base de datos baseline: baseline.db
+Archivo de log JSONL: logs.jsonl
+Archivo con historial de cambios: comparison_summary.txt
+
+Ejecución iniciada: Wed Nov 26 13:05:26 2025
+Archivo de entrada: rutas.txt
+Base de datos: baseline.db
+Archivo de log JSONL: logs.jsonl
+
